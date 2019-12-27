@@ -21,8 +21,11 @@ if [ $pyenvStatus -ne 0 ]; then
 fi
 
 pyenv update
-pyenv install -s 3.8.0
-pyenv global 3.8.0
+
+PYTHON_VERSION="$(pyenv install -l | grep -e '3.8.[0-9]' | grep -v - | tail -1)"
+
+pyenv install -s $PYTHON_VERSION
+pyenv global $PYTHON_VERSION
 
 # pip
 pip install -U pip
