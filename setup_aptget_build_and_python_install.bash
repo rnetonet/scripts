@@ -88,6 +88,11 @@ pip install -U boto3
 pip install -U youtube-dl
 pip install -U poetry
 
+pip install -U numpy
+pip install -U matplotlib
+pip install -U scikit-learn
+pip install -U pyside2
+
 # typeshed
 git clone https://github.com/python/typeshed.git ~/.typeshed; (cd ~/.typeshed && git pull);
 
