@@ -93,8 +93,13 @@ pip install -U matplotlib
 pip install -U scikit-learn
 pip install -U pyside2
 
+pip install -U tldr
+
 # typeshed
 git clone https://github.com/python/typeshed.git ~/.typeshed; (cd ~/.typeshed && git pull);
+
+# update itself
+git pull
 
 # stop dumping commands
 set +x
