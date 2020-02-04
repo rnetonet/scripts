@@ -5,29 +5,33 @@ sudo echo
 sudo apt-get update -y; sudo apt-get full-upgrade -y; sudo apt-get autoremove -y;
 sudo apt-get install -y autoconf bison build-essential curl freetds-dev gfortran ghostscript libatlas-base-dev libblas-dev libbz2-dev libcairo2 libcups2 libdbus-glib-1-2 libffi-dev libfreetype6-dev libgdbm-dev libgdk-pixbuf2.0-0 libglu1-mesa libhdf5-dev libjpeg-dev liblapack-dev libldap2-dev liblzma-dev libncurses5-dev libpango-1.0-0 libpangocairo-1.0-0 libpq-dev libreadline-dev libreadline6-dev libsasl2-dev libsm6 libsqlite3-dev libssl-dev libxinerama1 libxml2-dev libxmlsec1-dev libxslt1-dev libyaml-dev llvm make shared-mime-info tk-dev wget xz-utils zlib1g-dev
 
+#
 # pyenv
+#
 cat ~/.bashrc | fgrep pyenv
 pyenvStatus=$?
 if [ $pyenvStatus -ne 0 ]; then
     curl https://pyenv.run | bash
+    echo "" >> ~/.bashrc
     echo "# pyenv " >> ~/.bashrc
-    echo "export PATH=\"/home/$USER/.pyenv/bin:$PATH\"" >> ~/.bashrc
+    echo "export PATH=\"/home/\$USER/.pyenv/bin:\$PATH\"" >> ~/.bashrc
     echo 'eval "$(pyenv init -)"' >> ~/.bashrc
     echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 
-    export PATH="/home/$USER/.pyenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+    export PATH="/home/$USER/.pyenv/bin:$PATH"
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
 fi
 
 pyenv update
 
+# Latest Python using pyenv
 PYTHON_VERSION="$(pyenv install -l | grep -e '3.8.[0-9]' | grep -v - | tail -1)"
 
 pyenv install -s $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
-# pip
+# pip packages
 pip install -U pip
 
 pip install -U setuptools
@@ -95,7 +99,45 @@ pip install -U pyside2
 
 pip install -U tldr
 
-# typeshed
+#
+# rustup
+#
+cat ~/.bashrc | fgrep rustup
+rustup_status=$?
+if [ $rustup_status -ne 0 ]; then
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+    echo "" >> ~/.bashrc
+    echo "# rustup" >> ~/.bashrc
+    echo "export PATH=\"\$HOME/.cargo/bin:\$PATH\"" >> ~/.bashrc
+
+    export PATH="$HOME/.cargo/bin:$PATH"
+    source $HOME/.cargo/env
+fi
+
+# Export variables
+export PATH="$HOME/.cargo/bin:$PATH"
+source $HOME/.cargo/env
+
+# Update rustup and setup completions
+rustup update
+rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+
+# Rust packages
+cargo install --force cargo-update
+
+cargo install-update ripgrep
+cargo install-update bat
+cargo install-update fd-find
+cargo install-update tin-summer
+cargo install-update exa
+cargo install-update tokei
+
+#
+# Git repos
+#
+
+# Typeshed
 git clone https://github.com/python/typeshed.git ~/.typeshed; (cd ~/.typeshed && git pull);
 
 # update itself
