@@ -124,6 +124,12 @@ rustup update
 rustup completions bash > ~/.local/share/bash-completion/completions/rustup
 
 # Rust packages
+cargo install ripgrep
+cargo install bat
+cargo install fd-find
+cargo install tin-summer
+cargo install exa
+cargo install tokei
 cargo install --force cargo-update
 
 cargo install-update ripgrep
