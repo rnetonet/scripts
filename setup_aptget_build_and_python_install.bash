@@ -130,8 +130,9 @@ cargo install fd-find
 cargo install tin-summer
 cargo install exa
 cargo install tokei
-cargo install --force cargo-update
+cargo install cargo-update
 
+cargo install-update cargo-update
 cargo install-update ripgrep
 cargo install-update bat
 cargo install-update fd-find
