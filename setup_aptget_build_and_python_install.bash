@@ -96,6 +96,8 @@ pip install -U numpy
 pip install -U matplotlib
 pip install -U scikit-learn
 pip install -U pyside2
+pip install -U tabulate
+pip install -U prettyprinter
 
 pip install -U tldr
 
