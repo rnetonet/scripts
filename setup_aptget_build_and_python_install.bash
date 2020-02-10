@@ -52,13 +52,13 @@ pip install -U flake8
 pip install -U flake8-bugbear
 pip install -U flake8-commas
 pip install -U flake8-docstrings
+pip install -U flake8-import-order
 pip install -U flake8-2020
 pip install -U flake8-alfred
 pip install -U flake8-black
 pip install -U flake8-broken-line
 pip install -U flake8-builtins
 pip install -U flake8-coding
-pip install -U flake8-commas
 pip install -U flake8-comprehensions
 pip install -U flake8-debugger
 pip install -U flake8-django
