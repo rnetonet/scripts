@@ -85,6 +85,7 @@ pip install -U cohesion
 pip install -U dodgy
 pip install -U ipython
 pip install -U mypy
+pip install -U pytype
 pip install -U pytest
 pip install -U prettyprinter
 pip install -U isort
