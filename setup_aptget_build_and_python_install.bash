@@ -1,3 +1,4 @@
+
 # dump commands
 set -x
 
@@ -33,7 +34,7 @@ pyenv install -s $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
 
 # Adjust pip cache permissions
-sudo chown $USER:$USER -R .cache
+sudo chown $USER:$USER -R $HOME/.cache
 
 # pip packages
 pip install -U pip
