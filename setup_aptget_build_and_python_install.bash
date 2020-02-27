@@ -106,6 +106,8 @@ pip install -U tabulate
 pip install -U prettyprinter
 
 pip install -U tldr
+pip install -U pgcli
+pip install -U wharfee
 
 #
 # rustup
