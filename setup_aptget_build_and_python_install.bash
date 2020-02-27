@@ -1,6 +1,7 @@
 # dump commands
 set -x
 
+# Update apt-get and install basic development packages
 sudo echo
 sudo apt-get update -y; sudo apt-get full-upgrade -y; sudo apt-get autoremove -y;
 sudo apt-get install -y autoconf bison build-essential curl freetds-dev gfortran ghostscript libatlas-base-dev libblas-dev libbz2-dev libcairo2 libcups2 libdbus-glib-1-2 libffi-dev libfreetype6-dev libgdbm-dev libgdk-pixbuf2.0-0 libglu1-mesa libhdf5-dev libjpeg-dev liblapack-dev libldap2-dev liblzma-dev libncurses5-dev libpango-1.0-0 libpangocairo-1.0-0 libpq-dev libreadline-dev libreadline6-dev libsasl2-dev libsm6 libsqlite3-dev libssl-dev libxinerama1 libxml2-dev libxmlsec1-dev libxslt1-dev libyaml-dev llvm make shared-mime-info tk-dev wget xz-utils zlib1g-dev libclang-dev
@@ -30,6 +31,9 @@ PYTHON_VERSION="$(pyenv install -l | grep -e '3.8.[0-9]' | grep -v - | tail -1)"
 
 pyenv install -s $PYTHON_VERSION
 pyenv global $PYTHON_VERSION
+
+# Adjust pip cache permissions
+sudo chown $USER:$USER -R .cache
 
 # pip packages
 pip install -U pip
