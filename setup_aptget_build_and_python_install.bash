@@ -42,11 +42,9 @@ pyenv global $PYTHON_VERSION
 # Adjust pip cache permissions
 sudo chown $USER:$USER -R $HOME/.cache
 
-# pip packages
+# pip basepackages
 pip install -U pip
-
 pip install -U setuptools
-pip install -U pipenv
 pip install -U virtualenv
 pip install -U virtualenvwrapper
 pip install -U black
@@ -98,12 +96,9 @@ pip install -U ipython
 pip install -U mypy
 pip install -U pytype
 pip install -U pytest
-pip install -U prettyprinter
 pip install -U isort
 pip install -U boto3
-pip install -U youtube-dl
 pip install -U poetry
-
 pip install -U numpy
 pip install -U matplotlib
 pip install -U scikit-learn
@@ -111,7 +106,22 @@ pip install -U pyside2
 pip install -U tabulate
 pip install -U prettyprinter
 
-pip install -U tldr
+# pipx
+pip install -U pipx
+pipx ensurepath
+export PATH="$PATH:/home/$USER/.local/bin"
+
+pipx install youtube-dl
+pipx upgrade youtube-dl
+
+pipx install tldr
+pipx upgrade tldr
+
+pipx install pgcli
+pipx upgrade pgcli
+
+pipx install wharfee
+pipx upgrade wharfee
 
 #
 # rustup
