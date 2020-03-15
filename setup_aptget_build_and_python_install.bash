@@ -13,169 +13,74 @@ sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 sudo apt-get clean -y
 
-#
-# pyenv
-#
-cat ~/.bashrc | fgrep pyenv
-pyenvStatus=$?
-if [ $pyenvStatus -ne 0 ]; then
-    curl https://pyenv.run | bash
-    echo "" >> ~/.bashrc
-    echo "# pyenv " >> ~/.bashrc
-    echo "export PATH=\"/home/\$USER/.pyenv/bin:\$PATH\"" >> ~/.bashrc
-    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
-    echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+# Install pip
+curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
+sudo python3 /tmp/get-pip.py
+sudo chmod o+wrx -R /home/$USER/.cache/pip
+rm /tmp/get-pip.py
 
-    export PATH="/home/$USER/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
+# pip base packages
+pip install --user -U pip
+pip install --user -U setuptools
+pip install --user -U black
+pip install --user -U pylint
+pip install --user -U pylint-django
+pip install --user -U pylint-celery
+pip install --user -U mccabe
+pip install --user -U bandit
+pip install --user -U pydocstyle
+pip install --user -U pycodestyle
+pip install --user -U pep8-naming
+pip install --user -U doc8
+pip install --user -U flake8
+pip install --user -U flake8-bugbear
+pip install --user -U flake8-commas
+pip install --user -U flake8-docstrings
+pip install --user -U flake8-import-order
+pip install --user -U flake8-2020
+pip install --user -U flake8-alfred
+pip install --user -U flake8-black
+pip install --user -U flake8-broken-line
+pip install --user -U flake8-builtins
+pip install --user -U flake8-coding
+pip install --user -U flake8-comprehensions
+pip install --user -U flake8-debugger
+pip install --user -U flake8-django
+pip install --user -U flake8-eradicate
+pip install --user -U flake8-executable
+pip install --user -U flake8-fixme
+pip install --user -U flake8-mutable
+pip install --user -U flake8-mypy
+pip install --user -U flake8-pep3101
+pip install --user -U flake8-pie
+pip install --user -U flake8-print
+pip install --user -U flake8-quotes
+pip install --user -U flake8-pyi
+pip install --user -U flake8-spellcheck
+pip install --user -U flake8-strict
+pip install --user -U flake8-todo
+pip install --user -U flake8-variables-names
+pip install --user -U flake8-walrus
+pip install --user -U flake8-cognitive-complexity
+pip install --user -U flake8-functions
+pip install --user -U flake8-expression-complexity
+pip install --user -U flake8-bandit
+pip install --user -U cohesion
+pip install --user -U dodgy
+pip install --user -U ipython
+pip install --user -U mypy
+pip install --user -U pytype
+pip install --user -U pytest
+pip install --user -U isort
+pip install --user -U boto3
+pip install --user -U poetry
+pip install --user -U numpy
+pip install --user -U matplotlib
+pip install --user -U scikit-learn
+pip install --user -U pyside2
+pip install --user -U tabulate
+pip install --user -U prettyprinter
 
-pyenv update
-
-# Latest Python using pyenv
-PYTHON_VERSION="$(pyenv install -l | grep -e '3.8.[0-9]' | grep -v - | tail -1)"
-
-pyenv install -s $PYTHON_VERSION
-pyenv global $PYTHON_VERSION
-
-# Adjust pip cache permissions
-sudo chown $USER:$USER -R $HOME/.cache
-
-# pip basepackages
-pip install -U pip
-pip install -U setuptools
-pip install -U virtualenv
-pip install -U virtualenvwrapper
-pip install -U black
-pip install -U pylint
-pip install -U pylint-django
-pip install -U pylint-celery
-pip install -U mccabe
-pip install -U bandit
-pip install -U pydocstyle
-pip install -U pycodestyle
-pip install -U pep8-naming
-pip install -U doc8
-pip install -U flake8
-pip install -U flake8-bugbear
-pip install -U flake8-commas
-pip install -U flake8-docstrings
-pip install -U flake8-import-order
-pip install -U flake8-2020
-pip install -U flake8-alfred
-pip install -U flake8-black
-pip install -U flake8-broken-line
-pip install -U flake8-builtins
-pip install -U flake8-coding
-pip install -U flake8-comprehensions
-pip install -U flake8-debugger
-pip install -U flake8-django
-pip install -U flake8-eradicate
-pip install -U flake8-executable
-pip install -U flake8-fixme
-pip install -U flake8-mutable
-pip install -U flake8-mypy
-pip install -U flake8-pep3101
-pip install -U flake8-pie
-pip install -U flake8-print
-pip install -U flake8-quotes
-pip install -U flake8-pyi
-pip install -U flake8-spellcheck
-pip install -U flake8-strict
-pip install -U flake8-todo
-pip install -U flake8-variables-names
-pip install -U flake8-walrus
-pip install -U flake8-cognitive-complexity
-pip install -U flake8-functions
-pip install -U flake8-expression-complexity
-pip install -U flake8-bandit
-pip install -U cohesion
-pip install -U dodgy
-pip install -U ipython
-pip install -U mypy
-pip install -U pytype
-pip install -U pytest
-pip install -U isort
-pip install -U boto3
-pip install -U poetry
-pip install -U numpy
-pip install -U matplotlib
-pip install -U scikit-learn
-pip install -U pyside2
-pip install -U tabulate
-pip install -U prettyprinter
-
-# pipx
-pip install -U pipx
-pipx ensurepath
-export PATH="$PATH:/home/$USER/.local/bin"
-
-pipx install youtube-dl
-pipx upgrade youtube-dl
-
-pipx install tldr
-pipx upgrade tldr
-
-pipx install pgcli
-pipx upgrade pgcli
-
-pipx install wharfee
-pipx upgrade wharfee
-
-#
-# rustup
-#
-cat ~/.bashrc | fgrep rustup
-rustup_status=$?
-if [ $rustup_status -ne 0 ]; then
-    curl https://sh.rustup.rs -sSf | sh -s -- -y
-
-    echo "" >> ~/.bashrc
-    echo "# rustup" >> ~/.bashrc
-    echo "export PATH=\"\$HOME/.cargo/bin:\$PATH\"" >> ~/.bashrc
-
-    export PATH="$HOME/.cargo/bin:$PATH"
-    source $HOME/.cargo/env
-fi
-
-# Export variables
-export PATH="$HOME/.cargo/bin:$PATH"
-source $HOME/.cargo/env
-
-# Update rustup and setup completions
-rustup update
-rustup completions bash > ~/.local/share/bash-completion/completions/rustup
-
-# Rust packages
-cargo install ripgrep
-cargo install bat
-cargo install fd-find
-cargo install tin-summer
-cargo install exa
-cargo install tokei
-cargo install cargo-update
-
-cargo install-update cargo-update
-cargo install-update ripgrep
-cargo install-update bat
-cargo install-update fd-find
-cargo install-update tin-summer
-cargo install-update exa
-cargo install-update tokei
-
-#
-# Git repos
-#
-
-# Typeshed
-git clone https://github.com/python/typeshed.git ~/.typeshed; (cd ~/.typeshed && git pull);
-
-# update itself
-git pull
-
-# stop dumping commands
-set +x
-
-# open new bash
-exec bash
+# pip tools
+pip install --user -U tldr
+pip install --user -U youtube-dl
