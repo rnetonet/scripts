@@ -2,6 +2,10 @@
 # dump commands
 set -x
 
+#
+# apt-get
+#
+
 # Update apt-get and install basic development packages
 sudo echo
 sudo apt-get update -y
@@ -13,13 +17,17 @@ sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 sudo apt-get clean -y
 
+#
+# python/pip
+#
+
 # Install / update pip
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 sudo -H python3 /tmp/get-pip.py
 rm /tmp/get-pip.py
 
-sudo chown $USER:$USER -R /home/$USER/.cache/pip
-sudo chmod o+wrx -R /home/$USER/.cache/pip
+sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
+sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 
 # pip base packages
 pip install --user -U setuptools
@@ -85,3 +93,42 @@ pip install --user -U prettyprinter
 # pip tools
 pip install --user -U tldr
 pip install --user -U youtube-dl
+
+#
+# bashrc .local/bin/
+#
+grep -qxF '# pip' $HOME/.bashrc || echo '# pip' >> $HOME/.bashrc
+grep -qxF 'export PATH="$PATH:$HOME/.local/bin/"' $HOME/.bashrc || echo 'export PATH="$PATH:$HOME/.local/bin/"' >> $HOME/.bashrc
+export PATH="$PATH:$HOME/.local/bin/"
+
+#
+# rust
+#
+curl https://sh.rustup.rs -sSf | sh -s -- -y
+source $HOME/.cargo/env
+
+# rust update and setup completions
+rustup update
+rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+
+# rust tools
+cargo install cargo-update
+cargo install ripgrep
+cargo install bat
+cargo install fd-find
+cargo install tin-summer
+cargo install exa
+cargo install tokei
+cargo install hyperfine
+cargo install du-dust
+cargo install miniserve
+cargo install kibi
+cargo install -f --git https://github.com/cjbassi/ytop ytop
+
+cargo install-update --all --git
+
+#
+# bashrc .cargo/bin/
+#
+grep -qxF '# rust' $HOME/.bashrc || echo '# rust' >> $HOME/.bashrc
+grep -qxF 'source $HOME/.cargo/env' $HOME/.bashrc || echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
