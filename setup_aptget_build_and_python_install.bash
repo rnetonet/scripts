@@ -121,7 +121,6 @@ cargo install exa
 cargo install tokei
 cargo install hyperfine
 cargo install du-dust
-cargo install miniserve
 cargo install kibi
 cargo install --git https://github.com/cjbassi/ytop ytop
 
