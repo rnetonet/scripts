@@ -1,5 +1,5 @@
-git config --global user.name rnetodev
-git config --global user.email rneto@rneto.dev
+git config --global user.name rnetonet
+git config --global user.email rneto@rneto.net
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=9003600'
 git config --global core.autocrlf false
