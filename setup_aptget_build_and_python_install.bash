@@ -10,7 +10,44 @@ set -x
 sudo echo
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
+
 sudo apt-get install -y autoconf bison build-essential curl freetds-dev gfortran ghostscript libatlas-base-dev libblas-dev libbz2-dev libcairo2 libcups2 libdbus-glib-1-2 libffi-dev libfreetype6-dev libgdbm-dev libgdk-pixbuf2.0-0 libglu1-mesa libhdf5-dev libjpeg-dev liblapack-dev libldap2-dev liblzma-dev libncurses5-dev libpango-1.0-0 libpangocairo-1.0-0 libpq-dev libreadline-dev libreadline6-dev libsasl2-dev libsm6 libsqlite3-dev libssl-dev libxinerama1 libxml2-dev libxmlsec1-dev libxslt1-dev libyaml-dev llvm make shared-mime-info tk-dev wget xz-utils zlib1g-dev libclang-dev python-dev python3-dev
+
+sudo apt-get install -y make binutils gcc build-essential \
+ git curl zlib1g-dev openssl libssl-dev libreadline-dev \
+ libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev \
+ software-properties-common wget dnsutils vim zip unzip htop \
+ libffi-dev redis-server libxrender1 apt-transport-https ca-certificates curl software-properties-common postgresql-client libpq-dev libreoffice-l10n-pt-br
+
+sudo apt-get install -y \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+sudo apt-get install -y curl ca-certificates gnupg
+
+# docker keys
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+# postgresql keys
+curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+
+# update
+sudo apt-get update -y
+
+# install postgresql 12 and docker
+sudo apt-get install -y postgresql-12 pgadmin4
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+
+# add current user to docker group
+sudo usermod -aG docker $USER
 
 # Clean apt-get
 sudo apt-get autoremove -y
