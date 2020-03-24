@@ -17,7 +17,7 @@ sudo apt-get install -y make binutils gcc build-essential \
  git curl zlib1g-dev openssl libssl-dev libreadline-dev \
  libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev \
  software-properties-common wget dnsutils vim zip unzip htop \
- libffi-dev redis-server libxrender1 apt-transport-https ca-certificates curl software-properties-common postgresql-client libpq-dev libreoffice-l10n-pt-br
+ libffi-dev redis-server libxrender1 apt-transport-https ca-certificates curl software-properties-common postgresql-client libpq-dev libreoffice libreoffice-l10n-pt-br
 
 sudo apt-get install -y \
     apt-transport-https \
