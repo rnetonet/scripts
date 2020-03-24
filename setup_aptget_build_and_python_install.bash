@@ -61,75 +61,77 @@ sudo apt-get clean -y
 # Install / update pip
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 sudo -H python3 /tmp/get-pip.py
+sudo -H python /tmp/get-pip.py
 rm /tmp/get-pip.py
 
 sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
 sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 
 # pip base packages
-pip install --user -U setuptools
-pip install --user -U black
-pip install --user -U pylint
-pip install --user -U pylint-django
-pip install --user -U pylint-celery
-pip install --user -U mccabe
-pip install --user -U bandit
-pip install --user -U pydocstyle
-pip install --user -U pycodestyle
-pip install --user -U pep8-naming
-pip install --user -U doc8
-pip install --user -U flake8
-pip install --user -U flake8-bugbear
-pip install --user -U flake8-commas
-pip install --user -U flake8-docstrings
-pip install --user -U flake8-import-order
-pip install --user -U flake8-2020
-pip install --user -U flake8-alfred
-pip install --user -U flake8-black
-pip install --user -U flake8-broken-line
-pip install --user -U flake8-builtins
-pip install --user -U flake8-coding
-pip install --user -U flake8-comprehensions
-pip install --user -U flake8-debugger
-pip install --user -U flake8-django
-pip install --user -U flake8-eradicate
-pip install --user -U flake8-executable
-pip install --user -U flake8-fixme
-pip install --user -U flake8-mutable
-pip install --user -U flake8-mypy
-pip install --user -U flake8-pep3101
-pip install --user -U flake8-pie
-pip install --user -U flake8-print
-pip install --user -U flake8-quotes
-pip install --user -U flake8-pyi
-pip install --user -U flake8-spellcheck
-pip install --user -U flake8-strict
-pip install --user -U flake8-todo
-pip install --user -U flake8-variables-names
-pip install --user -U flake8-walrus
-pip install --user -U flake8-cognitive-complexity
-pip install --user -U flake8-functions
-pip install --user -U flake8-expression-complexity
-pip install --user -U flake8-bandit
-pip install --user -U cohesion
-pip install --user -U dodgy
-pip install --user -U ipython
-pip install --user -U mypy
-pip install --user -U pytype
-pip install --user -U pytest
-pip install --user -U isort
-pip install --user -U boto3
-pip install --user -U poetry
-pip install --user -U numpy
-pip install --user -U matplotlib
-pip install --user -U scikit-learn
-pip install --user -U pyside2
-pip install --user -U tabulate
-pip install --user -U prettyprinter
+pip3 install --user -U setuptools
+pip3 install --user -U virtualenv
+pip3 install --user -U black
+pip3 install --user -U pylint
+pip3 install --user -U pylint-django
+pip3 install --user -U pylint-celery
+pip3 install --user -U mccabe
+pip3 install --user -U bandit
+pip3 install --user -U pydocstyle
+pip3 install --user -U pycodestyle
+pip3 install --user -U pep8-naming
+pip3 install --user -U doc8
+pip3 install --user -U flake8
+pip3 install --user -U flake8-bugbear
+pip3 install --user -U flake8-commas
+pip3 install --user -U flake8-docstrings
+pip3 install --user -U flake8-import-order
+pip3 install --user -U flake8-2020
+pip3 install --user -U flake8-alfred
+pip3 install --user -U flake8-black
+pip3 install --user -U flake8-broken-line
+pip3 install --user -U flake8-builtins
+pip3 install --user -U flake8-coding
+pip3 install --user -U flake8-comprehensions
+pip3 install --user -U flake8-debugger
+pip3 install --user -U flake8-django
+pip3 install --user -U flake8-eradicate
+pip3 install --user -U flake8-executable
+pip3 install --user -U flake8-fixme
+pip3 install --user -U flake8-mutable
+pip3 install --user -U flake8-mypy
+pip3 install --user -U flake8-pep3101
+pip3 install --user -U flake8-pie
+pip3 install --user -U flake8-print
+pip3 install --user -U flake8-quotes
+pip3 install --user -U flake8-pyi
+pip3 install --user -U flake8-spellcheck
+pip3 install --user -U flake8-strict
+pip3 install --user -U flake8-todo
+pip3 install --user -U flake8-variables-names
+pip3 install --user -U flake8-walrus
+pip3 install --user -U flake8-cognitive-complexity
+pip3 install --user -U flake8-functions
+pip3 install --user -U flake8-expression-complexity
+pip3 install --user -U flake8-bandit
+pip3 install --user -U cohesion
+pip3 install --user -U dodgy
+pip3 install --user -U ipython
+pip3 install --user -U mypy
+pip3 install --user -U pytype
+pip3 install --user -U pytest
+pip3 install --user -U isort
+pip3 install --user -U boto3
+pip3 install --user -U poetry
+pip3 install --user -U numpy
+pip3 install --user -U matplotlib
+pip3 install --user -U scikit-learn
+pip3 install --user -U pyside2
+pip3 install --user -U tabulate
+pip3 install --user -U prettyprinter
 
 # pip tools
-pip install --user -U tldr
-pip install --user -U youtube-dl
+pip3 install --user -U tldr
+pip3 install --user -U youtube-dl
 
 #
 # bashrc .local/bin/
