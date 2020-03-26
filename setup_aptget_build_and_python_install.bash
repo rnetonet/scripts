@@ -49,6 +49,12 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 # add current user to docker group
 sudo usermod -aG docker $USER
 
+#
+# nodejs
+#
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 # Clean apt-get
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
