@@ -167,6 +167,7 @@ cargo install tokei
 cargo install hyperfine
 cargo install du-dust
 cargo install kibi
+cargo install sfz
 cargo install --git https://github.com/cjbassi/ytop ytop
 
 cargo install-update --all --git
