@@ -167,9 +167,15 @@ cargo install exa
 cargo install tokei
 cargo install hyperfine
 cargo install du-dust
-cargo install kibi
 cargo install sfz
+cargo install bandwhich
+cargo install procs
+cargo install lsd
+cargo install grex
+cargo install git-journal
+
 cargo install --git https://github.com/cjbassi/ytop ytop
+cargo install --git https://github.com/darakian/ddh ddh
 
 cargo install-update --all --git
 
