@@ -134,7 +134,9 @@ pip3 install --user -U scikit-learn
 pip3 install --user -U pyside2
 pip3 install --user -U tabulate
 pip3 install --user -U prettyprinter
-pip3 install --user -U pelican[Markdown]
+pip3 install --user Nikola
+pip3 install --user "Nikola[extras]"
+
 
 # pip tools
 pip3 install --user -U tldr
@@ -173,6 +175,8 @@ cargo install procs
 cargo install lsd
 cargo install grex
 cargo install git-journal
+cargo install starship
+cargo install amp
 
 cargo install --git https://github.com/cjbassi/ytop ytop
 cargo install --git https://github.com/darakian/ddh ddh
@@ -184,3 +188,28 @@ cargo install-update --all --git
 #
 grep -qxF '# rust' $HOME/.bashrc || echo '# rust' >> $HOME/.bashrc
 grep -qxF 'source $HOME/.cargo/env' $HOME/.bashrc || echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+
+#
+# starship
+#
+grep -qxF '# starship' $HOME/.bashrc || echo '# starship' >> $HOME/.bashrc
+grep -qxF 'eval "$(starship init bash)"' $HOME/.bashrc || echo 'eval "$(starship init bash)"' >> $HOME/.bashrc
+
+# startship configuration
+cat > $HOME/.config/starship.toml <<EOL
+# Disable the newline at the start of the prompt
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]      # The name of the module we are configuring is "character"
+symbol = "➜"     # The "symbol" segment is being set to "➜"
+
+[hostname]
+ssh_only = false
+
+[username]
+show_always = true
+
+[directory]
+truncate_to_repo = false
+EOL
