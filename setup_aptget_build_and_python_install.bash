@@ -11,25 +11,80 @@ sudo echo
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
 
-sudo apt-get install -y cmake autoconf bison build-essential curl freetds-dev gfortran ghostscript libatlas-base-dev libblas-dev libbz2-dev libcairo2 libcups2 libdbus-glib-1-2 libffi-dev libfreetype6-dev libgdbm-dev libgdk-pixbuf2.0-0 libglu1-mesa libhdf5-dev libjpeg-dev liblapack-dev libldap2-dev liblzma-dev libncurses5-dev libpango-1.0-0 libpangocairo-1.0-0 libpq-dev libreadline-dev libreadline6-dev libsasl2-dev libsm6 libsqlite3-dev libssl-dev libxinerama1 libxml2-dev libxmlsec1-dev libxslt1-dev libyaml-dev llvm make shared-mime-info tk-dev wget xz-utils zlib1g-dev libclang-dev python-dev python3-dev
-
-sudo apt-get install -y make binutils gcc build-essential \
- git curl zlib1g-dev openssl libssl-dev libreadline-dev \
- libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev \
- software-properties-common wget dnsutils vim zip unzip htop \
- libffi-dev redis-server libxrender1 apt-transport-https ca-certificates curl software-properties-common postgresql-client libpq-dev libreoffice libreoffice-l10n-pt-br
-
-sudo apt-get install -y \
-    apt-transport-https \
-    ca-certificates \
-    curl \
-    gnupg-agent \
-    software-properties-common
-
-sudo apt-get install -y curl ca-certificates gnupg
+sudo apt-get install -y cmake
+sudo apt-get install -y autoconf
+sudo apt-get install -y bison
+sudo apt-get install -y build-essential
+sudo apt-get install -y curl
+sudo apt-get install -y freetds-dev
+sudo apt-get install -y gfortran
+sudo apt-get install -y ghostscript
+sudo apt-get install -y libatlas-base-dev
+sudo apt-get install -y libblas-dev
+sudo apt-get install -y libbz2-dev
+sudo apt-get install -y libcairo2
+sudo apt-get install -y libcups2
+sudo apt-get install -y libdbus-glib-1-2
+sudo apt-get install -y libffi-dev
+sudo apt-get install -y libfreetype6-dev
+sudo apt-get install -y libgdbm-dev
+sudo apt-get install -y libgdk-pixbuf2.0-0
+sudo apt-get install -y libglu1-mesa
+sudo apt-get install -y libhdf5-dev
+sudo apt-get install -y libjpeg-dev
+sudo apt-get install -y liblapack-dev
+sudo apt-get install -y libldap2-dev
+sudo apt-get install -y liblzma-dev
+sudo apt-get install -y libncurses5-dev
+sudo apt-get install -y libpango-1.0-0
+sudo apt-get install -y libpangocairo-1.0-0
+sudo apt-get install -y libpq-dev
+sudo apt-get install -y libreadline-dev
+sudo apt-get install -y libreadline6-dev
+sudo apt-get install -y libsasl2-dev
+sudo apt-get install -y libsm6
+sudo apt-get install -y libsqlite3-dev
+sudo apt-get install -y libssl-dev
+sudo apt-get install -y libxinerama1
+sudo apt-get install -y libxml2-dev
+sudo apt-get install -y libxmlsec1-dev
+sudo apt-get install -y libxslt1-dev
+sudo apt-get install -y libyaml-dev
+sudo apt-get install -y llvm
+sudo apt-get install -y make
+sudo apt-get install -y shared-mime-info
+sudo apt-get install -y tk-dev
+sudo apt-get install -y wget
+sudo apt-get install -y xz-utils
+sudo apt-get install -y zlib1g-dev
+sudo apt-get install -y libclang-dev
+sudo apt-get install -y python-dev
+sudo apt-get install -y python3-dev
+sudo apt-get install -y binutils
+sudo apt-get install -y gcc
+sudo apt-get install -y git
+sudo apt-get install -y openssl
+sudo apt-get install -y sqlite3
+sudo apt-get install -y libcurl4-openssl-dev
+sudo apt-get install -y software-properties-common
+sudo apt-get install -y dnsutils
+sudo apt-get install -y vim
+sudo apt-get install -y zip
+sudo apt-get install -y unzip
+sudo apt-get install -y htop
+sudo apt-get install -y redis-server
+sudo apt-get install -y libxrender1
+sudo apt-get install -y apt-transport-https
+sudo apt-get install -y ca-certificates
+sudo apt-get install -y postgresql-client
+sudo apt-get install -y libreoffice
+sudo apt-get install -y libreoffice-l10n-pt-br
+sudo apt-get install -y gnupg-agent
+sudo apt-get install -y gnupg
 
 # docker keys
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
 sudo add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
@@ -37,13 +92,14 @@ sudo add-apt-repository \
 
 # postgresql keys
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+sudo sh -c 'echo "deb [ arch=amd64 ] http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
 
 # update
 sudo apt-get update -y
 
 # install postgresql 12 and docker
-sudo apt-get install -y postgresql-12 pgadmin4
+sudo apt-get install -y postgresql-12
+sudo apt-get install -y pgadmin4
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # add current user to docker group
