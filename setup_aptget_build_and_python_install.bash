@@ -292,3 +292,10 @@ show_always = true
 [directory]
 truncate_to_repo = false
 EOL
+
+
+#
+# sysctl
+#
+sudo grep -qxF 'fs.inotify.max_user_watches=524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
