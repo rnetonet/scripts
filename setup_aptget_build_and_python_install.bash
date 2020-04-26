@@ -264,6 +264,11 @@ grep -qxF '# rust' $HOME/.bashrc || echo '# rust' >> $HOME/.bashrc
 grep -qxF 'source $HOME/.cargo/env' $HOME/.bashrc || echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
 
 #
+# bat
+#
+mkdir -p "$HOME/.config/bat/"; echo '--theme="GitHub"' > "$HOME/.config/bat/config"
+
+#
 # starship
 #
 grep -qxF '# starship' $HOME/.bashrc || echo '# starship' >> $HOME/.bashrc
@@ -276,7 +281,7 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
-symbol = "➜"     # The "symbol" segment is being set to "➜"
+# symbol = "➜"     # The "symbol" segment is being set to "➜"
 
 [hostname]
 ssh_only = false
