@@ -11,6 +11,7 @@ sudo echo
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
 
+sudo apt-get install -y pkg-config
 sudo apt-get install -y cmake
 sudo apt-get install -y autoconf
 sudo apt-get install -y bison
