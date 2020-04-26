@@ -215,25 +215,42 @@ rustup completions bash > ~/.local/share/bash-completion/completions/rustup
 
 # rust tools
 cargo install cargo-update
-cargo install ripgrep
-cargo install bat
-cargo install fd-find
-cargo install tin-summer
-cargo install exa
-cargo install tokei
-cargo install hyperfine
-cargo install du-dust
-cargo install sfz
-cargo install bandwhich
-cargo install procs
-cargo install lsd
-cargo install grex
-cargo install git-journal
-cargo install starship
-cargo install amp
 
-cargo install --git https://github.com/cjbassi/ytop ytop
+# rg -> a better grep
+cargo install ripgrep
+
+# bat -> a better cat
+cargo install bat
+
+# fd -> a better find
+cargo install fd-find
+
+# tokei -> count your project lines of code
+cargo install tokei
+
+# hyperfine -> command line benchmark tool
+cargo install hyperfine
+
+# dust -> better du
+cargo install du-dust
+
+# sfz -> serves the current dir
+cargo install sfz
+
+# lsd -> better ls
+cargo install lsd
+
+# grex -> build regex from examples
+cargo install grex
+
+# a better shell prompt
+cargo install starship
+
+# ddh -> a fast duplicate file finder
 cargo install --git https://github.com/darakian/ddh ddh
+
+# kibi -> a lightweight text editor
+cargo install kibi
 
 cargo install-update --all --git
 
