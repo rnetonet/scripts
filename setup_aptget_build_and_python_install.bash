@@ -53,12 +53,10 @@ sudo apt-get install -y libyaml-dev
 sudo apt-get install -y llvm
 sudo apt-get install -y make
 sudo apt-get install -y shared-mime-info
-sudo apt-get install -y tk-dev
 sudo apt-get install -y wget
 sudo apt-get install -y xz-utils
 sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libclang-dev
-sudo apt-get install -y python-dev
 sudo apt-get install -y python3-dev
 sudo apt-get install -y binutils
 sudo apt-get install -y gcc
@@ -82,13 +80,14 @@ sudo apt-get install -y libreoffice-l10n-pt-br
 sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
+# FIXME: Docker has no packages for Focal Fossa yet
 # docker keys
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# sudo apt-key fingerprint 0EBFCD88
+# sudo add-apt-repository \
+#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+#    $(lsb_release -cs) \
+#    stable"
 
 # postgresql keys
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -123,7 +122,6 @@ sudo apt-get clean -y
 # Install / update pip
 curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 sudo -H python3 /tmp/get-pip.py
-sudo -H python /tmp/get-pip.py
 rm /tmp/get-pip.py
 
 sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
