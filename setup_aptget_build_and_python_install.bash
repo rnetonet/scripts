@@ -83,14 +83,13 @@ sudo apt-get install -y libreoffice-l10n-pt-br
 sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
-# FIXME: Docker has no packages for Focal Fossa yet
-# docker keys
-# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-# sudo apt-key fingerprint 0EBFCD88
-# sudo add-apt-repository \
-#    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-#    $(lsb_release -cs) \
-#    stable"
+# docker
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
 
 # postgresql keys
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
