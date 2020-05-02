@@ -27,6 +27,7 @@ sudo apt-get install -y libcairo2
 sudo apt-get install -y libcups2
 sudo apt-get install -y libdbus-glib-1-2
 sudo apt-get install -y libffi-dev
+sudo apt-get install -y libgmp3-dev
 sudo apt-get install -y libfreetype6-dev
 sudo apt-get install -y libgdbm-dev
 sudo apt-get install -y libgdk-pixbuf2.0-0
@@ -84,12 +85,11 @@ sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
 # docker
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-sudo apt-key fingerprint 0EBFCD88
-sudo add-apt-repository \
-   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
-   $(lsb_release -cs) \
-   stable"
+sudo apt-get install -y docker-compose
+
+# add current user to docker group
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # postgresql keys
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -101,10 +101,6 @@ sudo apt-get update -y
 # install postgresql 12 and docker
 sudo apt-get install -y postgresql-12
 sudo apt-get install -y pgadmin4
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
-
-# add current user to docker group
-sudo usermod -aG docker $USER
 
 #
 # nodejs
