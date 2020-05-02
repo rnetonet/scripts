@@ -190,6 +190,7 @@ pip3 install --user -U prettyprinter
 # pip tools
 pip3 install --user -U tldr
 pip3 install --user -U youtube-dl
+pip3 install --user -U glances
 
 #
 # bashrc .local/bin/
@@ -293,5 +294,5 @@ EOL
 #
 # sysctl
 #
-sudo grep -qxF 'fs.inotify.max_user_watches=524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /etc/sysctl.conf
+grep -qxF 'fs.inotify.max_user_watches=524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
