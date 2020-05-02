@@ -186,9 +186,6 @@ pip3 install --user -U scikit-learn
 pip3 install --user -U pyside2
 pip3 install --user -U tabulate
 pip3 install --user -U prettyprinter
-pip3 install --user Nikola
-pip3 install --user "Nikola[extras]"
-
 
 # pip tools
 pip3 install --user -U tldr
@@ -209,7 +206,8 @@ source $HOME/.cargo/env
 
 # rust update and setup completions
 rustup update
-rustup completions bash > ~/.local/share/bash-completion/completions/rustup
+mkdir -p $HOME/.local/share/bash-completion/completions/
+rustup completions bash > $HOME/.local/share/bash-completion/completions/rustup
 
 # rust tools
 cargo install cargo-update
@@ -249,6 +247,9 @@ cargo install --git https://github.com/darakian/ddh ddh
 
 # kibi -> a lightweight text editor
 cargo install kibi
+
+# mdbook
+cargo install mdbook
 
 cargo install-update --all --git
 
