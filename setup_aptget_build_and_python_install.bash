@@ -61,6 +61,8 @@ sudo apt-get install -y zlib1g-dev
 sudo apt-get install -y libclang-dev
 sudo apt-get install -y python3-dev
 sudo apt-get install -y binutils
+sudo apt-get install -y libsdl2-dev
+sudo apt-get install -y libsdl2-image-dev
 sudo apt-get install -y gcc
 sudo apt-get install -y git
 sudo apt-get install -y openssl
