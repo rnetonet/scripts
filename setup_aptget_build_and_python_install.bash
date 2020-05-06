@@ -86,12 +86,26 @@ sudo apt-get install -y libreoffice-l10n-pt-br
 sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
+# keep sudo
+sudo echo
+
 # docker
-sudo apt-get install -y docker-compose
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo apt-key fingerprint 0EBFCD88
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
+sudo apt-get update -y
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
 # add current user to docker group
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+# keep sudo
+sudo echo
 
 # postgresql keys
 curl https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
@@ -104,6 +118,9 @@ sudo apt-get update -y
 sudo apt-get install -y postgresql-12
 sudo apt-get install -y pgadmin4
 
+# keep sudo
+sudo echo
+
 #
 # nodejs
 #
@@ -114,6 +131,9 @@ sudo apt-get install -y nodejs
 sudo apt-get autoremove -y
 sudo apt-get autoclean -y
 sudo apt-get clean -y
+
+# keep sudo
+sudo echo
 
 #
 # python/pip
@@ -128,6 +148,7 @@ sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
 sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 
 # pip base packages
+pip3 install --user -U keyrings.alt
 pip3 install --user -U setuptools
 pip3 install --user -U virtualenv
 pip3 install --user -U black
@@ -200,6 +221,9 @@ pip3 install --user -U glances
 grep -qxF '# pip' $HOME/.bashrc || echo '# pip' >> $HOME/.bashrc
 grep -qxF 'export PATH="$PATH:$HOME/.local/bin/"' $HOME/.bashrc || echo 'export PATH="$PATH:$HOME/.local/bin/"' >> $HOME/.bashrc
 export PATH="$PATH:$HOME/.local/bin/"
+
+# keep sudo
+sudo echo
 
 #
 # rust
