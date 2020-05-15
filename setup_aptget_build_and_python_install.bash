@@ -209,6 +209,7 @@ pip3 install --user -U scikit-learn
 pip3 install --user -U pyside2
 pip3 install --user -U tabulate
 pip3 install --user -U prettyprinter
+pip3 install --user -U afdko
 
 # pip tools
 pip3 install --user -U tldr
