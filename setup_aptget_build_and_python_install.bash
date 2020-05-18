@@ -280,6 +280,9 @@ cargo install kibi
 # mdbook
 cargo install mdbook
 
+# gitui
+cargo install gitui
+
 cargo install-update --all --git
 
 #
