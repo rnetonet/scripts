@@ -262,8 +262,8 @@ cargo install du-dust
 # sfz -> serves the current dir
 cargo install sfz
 
-# exa -> better ls
-cargo install exa
+# lsd -> better ls
+cargo install lsd
 
 # grex -> build regex from examples
 cargo install grex
