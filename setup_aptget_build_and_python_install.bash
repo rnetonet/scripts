@@ -80,7 +80,6 @@ sudo apt-get install -y redis-server
 sudo apt-get install -y libxrender1
 sudo apt-get install -y apt-transport-https
 sudo apt-get install -y ca-certificates
-sudo apt-get install -y postgresql-client
 sudo apt-get install -y libreoffice
 sudo apt-get install -y libreoffice-l10n-pt-br
 sudo apt-get install -y gnupg-agent
@@ -98,11 +97,10 @@ sudo add-apt-repository \
    stable"
 
 sudo apt-get update -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get install -y docker-ce
 
 # add current user to docker group
-sudo groupadd docker
-sudo usermod -aG docker $USER
+sudo usermod -aG docker ${USER}
 
 # keep sudo
 sudo echo
@@ -216,6 +214,7 @@ pip3 install --user -U fontmake
 pip3 install --user -U tldr
 pip3 install --user -U youtube-dl
 pip3 install --user -U glances
+pip3 install --user -U pelican[Markdown]
 
 #
 # bashrc .local/bin/
