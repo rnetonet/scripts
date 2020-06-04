@@ -85,6 +85,9 @@ sudo apt-get install -y libreoffice-l10n-pt-br
 sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
+# touchpad
+sudo apt-get install -y xserver-xorg-input-synaptics
+
 # keep sudo
 sudo echo
 
