@@ -86,6 +86,7 @@ sudo apt-get install -y gnupg-agent
 sudo apt-get install -y gnupg
 
 # touchpad
+sudo apt-get install -y xserver-xorg-input-synaptics-hwe-18.04
 sudo apt-get install -y xserver-xorg-input-synaptics
 
 # keep sudo
