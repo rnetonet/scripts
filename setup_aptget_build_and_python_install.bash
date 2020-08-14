@@ -98,6 +98,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/packages.micr
 sudo apt-get install -y apt-transport-https
 sudo apt-get update
 sudo apt-get install -y code
+rm packages.microsoft.gpg
 
 # keep sudo
 sudo echo
