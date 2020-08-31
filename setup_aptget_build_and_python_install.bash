@@ -157,6 +157,8 @@ curl https://bootstrap.pypa.io/get-pip.py -o /tmp/get-pip.py
 sudo -H python3 /tmp/get-pip.py
 rm /tmp/get-pip.py
 
+sudo pip3 install -U pip
+
 sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
 sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 
