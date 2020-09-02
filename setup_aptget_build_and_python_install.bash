@@ -300,6 +300,9 @@ cargo install mdbook
 # gitui
 cargo install gitui
 
+# tldr
+cargo install tealdeer
+
 cargo install-update --all --git
 
 #
