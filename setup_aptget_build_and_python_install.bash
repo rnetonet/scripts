@@ -329,7 +329,9 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
-# symbol = "➜"     # The "symbol" segment is being set to "➜"
+symbol = ">"
+success_symbol = "[>](bold green)"     # The "symbol" segment is being set to "➜"
+error_symbol = "[X](bold red) "
 
 [hostname]
 ssh_only = false
@@ -339,6 +341,9 @@ show_always = true
 
 [directory]
 truncate_to_repo = false
+
+[git_branch]
+symbol = "#"
 EOL
 
 
