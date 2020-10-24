@@ -163,7 +163,6 @@ sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
 sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 
 # pip base packages
-pip3 install --user -U keyrings.alt
 pip3 install --user -U setuptools
 pip3 install --user -U virtualenv
 pip3 install --user -U black
