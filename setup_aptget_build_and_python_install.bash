@@ -326,11 +326,11 @@ cat > $HOME/.config/starship.toml <<EOL
 # Disable the newline at the start of the prompt
 add_newline = false
 
-# Replace the "❯" symbol in the prompt with "➜"
+# Replace the ">" symbol in the prompt with "➜"
 [character]      # The name of the module we are configuring is "character"
 symbol = ">"
 success_symbol = "[>](bold green)"     # The "symbol" segment is being set to "➜"
-error_symbol = "[X](bold red) "
+error_symbol = "[>](bold red) "
 
 [hostname]
 ssh_only = false
