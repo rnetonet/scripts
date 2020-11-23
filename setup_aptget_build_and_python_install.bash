@@ -166,6 +166,7 @@ sudo -H chmod o+wrx -R /home/$USER/.cache/pip
 pip3 install --user -U setuptools
 pip3 install --user -U virtualenv
 pip3 install --user -U black
+pip3 install --user -U yapf
 pip3 install --user -U pylint
 pip3 install --user -U pylint-django
 pip3 install --user -U pylint-celery
