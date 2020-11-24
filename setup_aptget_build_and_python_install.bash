@@ -201,6 +201,7 @@ pip3 install --user -U flake8-print
 pip3 install --user -U flake8-quotes
 pip3 install --user -U flake8-pyi
 pip3 install --user -U flake8-spellcheck
+pip3 install --user -U flake8-class-attributes-order
 pip3 install --user -U flake8-strict
 pip3 install --user -U flake8-todo
 pip3 install --user -U flake8-variables-names
