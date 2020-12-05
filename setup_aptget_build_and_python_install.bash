@@ -170,6 +170,9 @@ pip3 install --user -U yapf
 pip3 install --user -U pylint
 pip3 install --user -U pylint-django
 pip3 install --user -U pylint-celery
+pip3 install --user -U pylint-args
+pip3 install --user -U pylint-quotes
+pip3 install --user -U pylint-quotes
 pip3 install --user -U mccabe
 pip3 install --user -U bandit
 pip3 install --user -U pydocstyle
