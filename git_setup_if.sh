@@ -1,3 +1,9 @@
+# cant run as root
+if [[ $(/usr/bin/id -u) -eq 0 ]]; then
+    echo "Do not execute as root"
+    exit
+fi
+
 git config user.name ruivaldo.lobao
 git config user.email ruivaldo.lobao@ifbaiano.edu.br
 git config credential.helper cache

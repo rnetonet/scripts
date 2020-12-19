@@ -1,3 +1,9 @@
+# cant run as root
+if [[ $(/usr/bin/id -u) -eq 0 ]]; then
+    echo "Do not execute as root"
+    exit
+fi
+
 git config --global user.name rnetonet
 git config --global user.email rneto@rneto.net
 git config --global credential.helper cache

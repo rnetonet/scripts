@@ -2,6 +2,12 @@
 # dump commands
 set -x
 
+# cant run as root
+if [[ $(/usr/bin/id -u) -eq 0 ]]; then
+    echo "Do not execute as root"
+    exit
+fi
+
 #
 # apt-get
 #
