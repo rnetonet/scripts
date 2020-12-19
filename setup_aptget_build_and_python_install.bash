@@ -159,26 +159,17 @@ rm /tmp/get-pip.py
 
 sudo pip3 install -U pip
 
-sudo -H chown $USER:$USER -R /home/$USER/.cache/pip
-sudo -H chmod o+wrx -R /home/$USER/.cache/pip
+sudo chown $USER:$USER -R /home/$USER/.cache/pip
+sudo chmod o+wrx -R /home/$USER/.cache/pip
 
 # pip base packages
 pip3 install --user -U setuptools
 pip3 install --user -U virtualenv
 pip3 install --user -U black
-pip3 install --user -U yapf
-pip3 install --user -U pylint
-pip3 install --user -U pylint-django
-pip3 install --user -U pylint-celery
-pip3 install --user -U pylint-args
-pip3 install --user -U pylint-quotes
-pip3 install --user -U pylint-quotes
-pip3 install --user -U mccabe
-pip3 install --user -U bandit
-pip3 install --user -U pydocstyle
-pip3 install --user -U pycodestyle
-pip3 install --user -U pep8-naming
-pip3 install --user -U doc8
+pip3 install --user -U isort
+
+pip3 install --user -U mypy
+
 pip3 install --user -U flake8
 pip3 install --user -U flake8-bugbear
 pip3 install --user -U flake8-commas
@@ -213,13 +204,12 @@ pip3 install --user -U flake8-cognitive-complexity
 pip3 install --user -U flake8-functions
 pip3 install --user -U flake8-expression-complexity
 pip3 install --user -U flake8-bandit
-pip3 install --user -U cohesion
-pip3 install --user -U dodgy
+
 pip3 install --user -U ipython
-pip3 install --user -U mypy
+
 pip3 install --user -U pytype
 pip3 install --user -U pytest
-pip3 install --user -U isort
+
 pip3 install --user -U boto3
 pip3 install --user -U poetry
 pip3 install --user -U numpy
@@ -231,11 +221,12 @@ pip3 install --user -U prettyprinter
 pip3 install --user -U afdko
 pip3 install --user -U fontmake
 
-# pip tools
-pip3 install --user -U tldr
-pip3 install --user -U youtube-dl
-pip3 install --user -U glances
-pip3 install --user -U pelican[Markdown]
+# pipx and tools
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+pipx install youtube-dl
+
 
 #
 # bashrc .local/bin/
