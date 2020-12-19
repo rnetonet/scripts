@@ -231,8 +231,7 @@ pip3 install --user -U fontmake
 python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
-pipx install youtube-dl
-
+python3 -m pipx install youtube-dl
 
 #
 # bashrc .local/bin/
@@ -297,9 +296,6 @@ cargo install kibi
 
 # mdbook
 cargo install mdbook
-
-# gitui
-cargo install gitui
 
 # tldr
 cargo install tealdeer
