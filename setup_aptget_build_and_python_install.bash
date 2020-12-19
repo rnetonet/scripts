@@ -17,6 +17,7 @@ sudo echo
 sudo apt-get update -y
 sudo apt-get full-upgrade -y
 
+sudo apt-get install -y python3-venv
 sudo apt-get install -y pkg-config
 sudo apt-get install -y cmake
 sudo apt-get install -y autoconf
@@ -227,18 +228,19 @@ pip3 install --user -U prettyprinter
 pip3 install --user -U afdko
 pip3 install --user -U fontmake
 
-# pipx and tools
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
-
-python3 -m pipx install youtube-dl
-
 #
 # bashrc .local/bin/
 #
 grep -qxF '# pip' $HOME/.bashrc || echo '# pip' >> $HOME/.bashrc
 grep -qxF 'export PATH="$PATH:$HOME/.local/bin/"' $HOME/.bashrc || echo 'export PATH="$PATH:$HOME/.local/bin/"' >> $HOME/.bashrc
 export PATH="$PATH:$HOME/.local/bin/"
+
+# pipx and tools
+python3 -m pip install --user pipx
+python3 -m pipx ensurepath
+
+python3 -m pipx install youtube-dl
+python3 -m pipx upgrade-all
 
 # keep sudo
 sudo echo
