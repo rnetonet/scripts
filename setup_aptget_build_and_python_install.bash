@@ -351,3 +351,10 @@ EOL
 #
 grep -qxF 'fs.inotify.max_user_watches=524288' /etc/sysctl.conf || echo 'fs.inotify.max_user_watches=524288' | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
+
+#
+# grub psmouse - suspend and touchpad
+# ref: https://adamprescott.net/2020/05/07/trackpad-disabled-after-sleep-suspend-following-upgrade-to-ubuntu-20-04/
+#
+grep -qF 'psmouse.synaptics_intertouch=0' /etc/default/grub || sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 psmouse.synaptics_intertouch=0"/g' /etc/default/grub
+sudo update-grub
