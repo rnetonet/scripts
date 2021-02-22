@@ -173,11 +173,15 @@ sudo chmod o+wrx -R /home/$USER/.cache/pip
 pip3 install --user -U setuptools
 pip3 install --user -U virtualenv
 pip3 install --user -U black
+pip3 install --user -U yapf
 pip3 install --user -U isort
 
 pip3 install --user -U mypy
 
 pip3 install --user -U flake8
+pip3 install --user -U cohesion
+pip3 install --user -U dlint
+pip3 install --user -U flake8-bandit
 pip3 install --user -U flake8-bugbear
 pip3 install --user -U flake8-commas
 pip3 install --user -U flake8-docstrings
@@ -194,6 +198,7 @@ pip3 install --user -U flake8-django
 pip3 install --user -U flake8-eradicate
 pip3 install --user -U flake8-executable
 pip3 install --user -U flake8-fixme
+pip3 install --user -U flake8-isort
 pip3 install --user -U flake8-mutable
 pip3 install --user -U flake8-mypy
 pip3 install --user -U flake8-pep3101
