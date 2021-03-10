@@ -195,6 +195,7 @@ pip3 install --user -U flake8-coding
 pip3 install --user -U flake8-comprehensions
 pip3 install --user -U flake8-debugger
 pip3 install --user -U flake8-django
+pip3 install --user -U flake8-django-migrations
 pip3 install --user -U flake8-eradicate
 pip3 install --user -U flake8-executable
 pip3 install --user -U flake8-fixme
